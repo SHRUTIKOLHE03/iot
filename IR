@@ -1,14 +1,17 @@
 int IRSensor = 9;
 int LED = 13;
-void setup() {
+void setup() 
+{
 Serial.begin(9600);
 Serial.println("Working");
 pinMode(9, INPUT);
 pinMode(13, OUTPUT);
 }
-void loop() {
+
+void loop() 
+{
 int sensorStatus=digitalRead(IRSensor);
-if(sensorStatus==0)
+if(sensorStatus==1)
 {
 digitalWrite(LED, HIGH);
 Serial.println("Object detected.");
@@ -19,3 +22,12 @@ digitalWrite(LED, LOW);
 Serial.println("No object detected.");
 }
 }
+
+==>Pin connection:
+gnd ir- gnd
+power ir- 5v
+o/p ir- 9
+
+Led 
+long on aurdino 13
+small on gnd
