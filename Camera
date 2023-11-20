@@ -1,0 +1,16 @@
+==>Camera capture:
+
+import picamera from PiCamera
+import time from sleep
+
+camera=PiCamera();
+camera.start_preview();
+camera.vflip();
+sleep(10);
+camera.capture('specify path/name.jpg');
+camera.stop_preview();
+
+==>Camera Enabled:
+sudo raspi-config
+-3.Interface
+-1.P1 camera enable-yes
