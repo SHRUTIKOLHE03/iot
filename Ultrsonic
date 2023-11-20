@@ -1,0 +1,26 @@
+#define tpin 3 
+#define epin 12
+int distance ;
+long duration;
+void setup() 
+{
+pinMode(tpin, OUTPUT);
+delay(10);  
+pinMode(epin, INPUT);
+delay(10);
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(tpin,low);
+  delay(10);
+  digitalWrite(tpin,high);
+  delay(10);
+  digitalWrite(tpin,low);
+  delay(10);
+  duration=pulseIn(epin,HIGH);
+  distance=(0.0344*duration)/2;
+  Serial.print(distance);
+
+}
